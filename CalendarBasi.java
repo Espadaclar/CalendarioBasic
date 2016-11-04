@@ -37,14 +37,14 @@ public class CalendarBasi
     }
 
     public String getFecha(){
-        incrementaFecha();
-        return dia +"-"+ mes +"-"+ anno; 
+        int aux = anno - 2000;
+        return dia +"-"+ mes +"-"+ aux ; 
     }
 
     /**
      * mt para incrementar la fecha
      */
-    public void incrementaDia(){
+    private void incrementaDia(){
         dia = dia +1;
     }
 
