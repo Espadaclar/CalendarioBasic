@@ -8,26 +8,53 @@
 public class CalendarBasi
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int dia;
+    private int mes;
+    private int anno;
 
     /**
+     * 
      * Constructor for objects of class CalendarBasi
      */
     public CalendarBasi()
     {
-        // initialise instance variables
-        x = 0;
+        dia = 01;
+        mes = 01;
+        anno = 01;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+   /**
+    *  método, fijar la fecha que va a almacenar el calendario indicando por parámetro el día, el mes y el año de dicha fecha. Solo van a 
+    *  contemplarse años desde 2001 hasta 2099
+    */
+   public void setFecha(int dia2, int mes2, int anno2){
+       if(anno2 < 2001 && anno2 > 2099){
+           anno2 = 2001;
+       }
+       dia = dia2;
+       mes = mes2;
+       anno = anno2;  
+   }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
