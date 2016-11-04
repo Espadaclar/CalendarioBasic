@@ -35,6 +35,11 @@ public class CalendarBasi
        mes = mes2;
        anno = anno2;  
    }
+   
+   public String getFecha(){
+       return dia +"-"+ mes +"-"+ anno; 
+   }
+   
     
 }
 

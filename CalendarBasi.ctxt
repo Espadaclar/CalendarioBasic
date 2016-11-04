@@ -5,4 +5,6 @@ comment0.text=\r\n\ \r\n\ Constructor\ for\ objects\ of\ class\ CalendarBasi\r\n
 comment1.params=dia2\ mes2\ anno2
 comment1.target=void\ setFecha(int,\ int,\ int)
 comment1.text=\r\n\ \ m\u00E9todo,\ fijar\ la\ fecha\ que\ va\ a\ almacenar\ el\ calendario\ indicando\ por\ par\u00E1metro\ el\ d\u00EDa,\ el\ mes\ y\ el\ a\u00F1o\ de\ dicha\ fecha.\ Solo\ van\ a\ \r\n\ \ contemplarse\ a\u00F1os\ desde\ 2001\ hasta\ 2099\r\n
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ getFecha()
+numComments=3
