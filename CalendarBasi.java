@@ -23,40 +23,52 @@ public class CalendarBasi
         anno = 01;
     }
 
-   /**
-    *  método, fijar la fecha que va a almacenar el calendario indicando por parámetro el día, el mes y el año de dicha fecha. Solo van a 
-    *  contemplarse años desde 2001 hasta 2099
-    */
-   public void setFecha(int dia2, int mes2, int anno2){
-       if(anno2 < 2001 && anno2 > 2099){
-           anno2 = 2001;
+    /**
+     *  método, fijar la fecha que va a almacenar el calendario indicando por parámetro el día, el mes y el año de dicha fecha. Solo van a 
+     *  contemplarse años desde 2001 hasta 2099
+     */
+    public void setFecha(int dia2, int mes2, int anno2){
+        if(anno2 < 2001 && anno2 > 2099){
+            anno2 = 2001;
+        }
+        dia = dia2;
+        mes = mes2;
+        anno = anno2;  
+    }
+
+    public String getFecha(){
+        incrementaFecha();
+        return dia +"-"+ mes +"-"+ anno; 
+    }
+
+    /**
+     * mt para incrementar la fecha
+     */
+    public void incrementaDia(){
+        dia = dia +1;
+    }
+
+    /**
+     * incrementa la fecha
+     */
+    public void incrementaFecha(){
+       incrementaDia();
+       if(dia > 30){
+         dia = 1;
+         mes = mes +1;
        }
-       dia = dia2;
-       mes = mes2;
-       anno = anno2;  
-   }
-   
-   public String getFecha(){
-       return dia +"-"+ mes +"-"+ anno; 
-   }
-   
+       if(mes > 12){
+         mes = 1;
+         anno = anno +1;
+       }
+       if(anno > 2099){
+           anno = 2001;
+       }
     
+    }
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
