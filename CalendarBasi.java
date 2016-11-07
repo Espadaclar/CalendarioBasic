@@ -10,67 +10,70 @@ public class CalendarBasi
     // instance variables - replace the example below with your own
     private int dia;
     private int mes;
-    private int anno;
-
+    private int anio;
+    
     /**
-     * 
-     * Constructor for objects of class CalendarBasi
+     * Constructor for objects of class CalendarioBasico
      */
     public CalendarBasi()
     {
-        dia = 01;
-        mes = 01;
-        anno = 01;
-    }
-
-    /**
-     *  método, fijar la fecha que va a almacenar el calendario indicando por parámetro el día, el mes y el año de dicha fecha. Solo van a 
-     *  contemplarse años desde 2001 hasta 2099
-     */
-    public void setFecha(int dia2, int mes2, int anno2){
-        if(anno2 < 2001 && anno2 > 2099){
-            anno2 = 2001;
-        }
-        dia = dia2;
-        mes = mes2;
-        anno = anno2;  
-    }
-
-    public String getFecha(){
-        int aux = anno - 2000;
-        return dia +"-"+ mes +"-"+ aux ; 
-    }
-
-    /**
-     * mt para incrementar la fecha
-     */
-    private void incrementaDia(){
-        dia = dia +1;
-    }
-
-    /**
-     * incrementa la fecha
-     */
-    public void incrementaFecha(){
-       incrementaDia();
-       if(dia > 30){
-         dia = 1;
-         mes = mes +1;
-       }
-       if(mes > 12){
-         mes = 1;
-         anno = anno +1;
-       }
-       if(anno > 2099){
-           anno = 2001;
-       }
-    
-    }
-
+		dia = 1;
+		mes = 1;
+		anio = 1;
+	}
+	
+	public void fijarFecha(int nuevoDia, int nuevoMes, int nuevoAnio)
+	{
+		dia = nuevoDia;
+		mes = nuevoMes;
+		anio = nuevoAnio;
+	}
+	
+	public void avanzarFecha() 
+	{
+	
+		dia = dia + 1;
+		if (dia == 31) {
+			dia = 1;
+			mes = mes + 1;		
+			if (mes == 13){
+				mes = 1;
+				anio = anio + 1;
+				if ( anio == 100) {
+					anio = 1;
+				}			
+			}		
+			
+		}		
+	}
+	
+	public String mostrarFecha() {
+	    String textoDevolver;
+	    
+		String diaTexto = "" + dia;
+		if(dia < 10){
+			diaTexto = "0" + dia;
+		}
+		String mesTexto;
+		if (mes < 10){
+			mesTexto = "0" + mes + "";
+		}
+		else {
+			mesTexto = mes + "";
+		}
+		String anioTexto;
+		if(anio < 10){
+			anioTexto = "0" + anio;
+		}
+		else{
+			anioTexto = anio + "";
+		}
+		
+		textoDevolver = diaTexto + "-" + mesTexto + "-" + anioTexto;
+	    return textoDevolver;
+	}
 
 }
-
-
 
 
 

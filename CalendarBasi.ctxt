@@ -1,16 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CalendarBasi()
-comment0.text=\r\n\ \r\n\ Constructor\ for\ objects\ of\ class\ CalendarBasi\r\n
-comment1.params=dia2\ mes2\ anno2
-comment1.target=void\ setFecha(int,\ int,\ int)
-comment1.text=\r\n\ \ m\u00E9todo,\ fijar\ la\ fecha\ que\ va\ a\ almacenar\ el\ calendario\ indicando\ por\ par\u00E1metro\ el\ d\u00EDa,\ el\ mes\ y\ el\ a\u00F1o\ de\ dicha\ fecha.\ Solo\ van\ a\ \r\n\ \ contemplarse\ a\u00F1os\ desde\ 2001\ hasta\ 2099\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CalendarioBasico\r\n
+comment1.params=nuevoDia\ nuevoMes\ nuevoAnio
+comment1.target=void\ fijarFecha(int,\ int,\ int)
 comment2.params=
-comment2.target=java.lang.String\ getFecha()
+comment2.target=void\ avanzarFecha()
 comment3.params=
-comment3.target=void\ incrementaDia()
-comment3.text=\r\n\ mt\ para\ incrementar\ la\ fecha\r\n
-comment4.params=
-comment4.target=void\ incrementaFecha()
-comment4.text=\r\n\ incrementa\ la\ fecha\r\n
-numComments=5
+comment3.target=java.lang.String\ mostrarFecha()
+numComments=4
