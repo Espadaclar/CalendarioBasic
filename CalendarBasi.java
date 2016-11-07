@@ -8,73 +8,65 @@
 public class CalendarBasi
 {
     // instance variables - replace the example below with your own
-    private int dia;
-    private int mes;
-    private int anio;
-    
+    private DisplayDosDigitos dia;
+    private DisplayDosDigitos mes;
+    private DisplayDosDigitos anio;
+
     /**
      * Constructor for objects of class CalendarioBasico
      */
     public CalendarBasi()
     {
-		dia = 1;
-		mes = 1;
-		anio = 1;
-	}
-	
-	public void fijarFecha(int nuevoDia, int nuevoMes, int nuevoAnio)
-	{
-		dia = nuevoDia;
-		mes = nuevoMes;
-		anio = nuevoAnio;
-	}
-	
-	public void avanzarFecha() 
-	{
-	
-		dia = dia + 1;
-		if (dia == 31) {
-			dia = 1;
-			mes = mes + 1;		
-			if (mes == 13){
-				mes = 1;
-				anio = anio + 1;
-				if ( anio == 100) {
-					anio = 1;
-				}			
-			}		
-			
-		}		
-	}
-	
-	public String mostrarFecha() {
-	    String textoDevolver;
-	    
-		String diaTexto = "" + dia;
-		if(dia < 10){
-			diaTexto = "0" + dia;
-		}
-		String mesTexto;
-		if (mes < 10){
-			mesTexto = "0" + mes + "";
-		}
-		else {
-			mesTexto = mes + "";
-		}
-		String anioTexto;
-		if(anio < 10){
-			anioTexto = "0" + anio;
-		}
-		else{
-			anioTexto = anio + "";
-		}
-		
-		textoDevolver = diaTexto + "-" + mesTexto + "-" + anioTexto;
-	    return textoDevolver;
-	}
+        dia = new DisplayDosDigitos(31);
+        mes = new DisplayDosDigitos(13);
+        anio = new DisplayDosDigitos(100);
+    }
+
+    public void fijarFecha(int nuevoDia, int nuevoMes, int nuevoAnio)
+    {
+        dia.setValor(nuevoDia);
+        mes.setValor(nuevoMes);
+        anio.setValor(nuevoAnio);
+    }
+
+    public void avanzarFecha() 
+    {
+        dia.incrementaValor();
+        //      if (dia.getValor() == 31) {
+        //          mes.incrementaValor();
+        //          dia.setValor(1);  
+        //          if (mes.getValor() == 13){
+        //              mes.incrementaValor(); 
+        //              mes.setValor(1);
+        //              anio.incrementaValor();
+        //              if ( anio.getValor() == 100) {
+        //                  anio.setValor(1);
+        //              }           
+        //          }       
+        //          
+        //        }   
+        if (dia.getValor() == 1) {
+         mes.incrementaValor();
+         if (mes.getValor() == 1){
+             anio.incrementaValor();
+             if ( anio.getValor() == 100) {
+                anio.setValor(1);
+             }           
+         }       
+         
+       } 
+    }
+
+    public String mostrarFecha() {
+        String textoDevolver;
+
+        String diaTexto = dia.getValorDelDisplay();
+        String mesTexto = mes.getValorDelDisplay();
+        String anioTexto = anio.getValorDelDisplay();
+
+        textoDevolver = diaTexto + "-" + mesTexto + "-" + anioTexto;
+        return textoDevolver;
+    }
 
 }
-
-
-
 
